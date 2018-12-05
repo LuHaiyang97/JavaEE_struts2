@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+  <class name="com.bean.User" table="tb_user">
+    <id name="userId" column="id"></id>
+    <property name="userName"        column="name"       type="string"  length="20" not-null="true"></property>
+    <property name="userPass"        column="password"   type="string"  length="20" not-null="true"></property>
+    <property name="userPhone"       column="phone"      type="string"  length="20" not-null="true"></property>
+    <property name="userAge"         column="age"        type="integer" length="20" not-null="true"></property>
+    <property name="userPermission"  column="permission" type="string"  length="20" not-null="true"></property>
+  </class>
+</hibernate-mapping>

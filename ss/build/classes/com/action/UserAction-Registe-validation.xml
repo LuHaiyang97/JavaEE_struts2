@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd" >
+<validators>
+  <validator type="requiredstring">
+    <param name="fieldName">users.userName</param>
+    <param name="trim">true</param>
+    <message>用户名不能为空</message>
+  </validator>
+  <validator type="requiredstring">
+    <param name="fieldName">users.userPass</param>
+    <param name="trim">true</param>
+    <message>密码不能为空</message>
+  </validator>
+  <validator type="requiredstring">
+    <param name="fieldName">users.userPhone</param>
+    <param name="trim">true</param>
+    <message>手机号不能为空</message>
+  </validator>
+  <validator type="fieldexpression">
+    <param name="fieldName">users.userPass</param>
+    <param name="fieldName">rePass</param>
+    <param name="expression"><![CDATA[(users.userPass==rePass)]]></param>
+    <message>两次密码输入不一致</message> 
+  </validator>
+  <validator type="stringlength">
+    <param name="trim">true</param>
+    <param name="minLength">11</param>  
+    <param name="maxLength">11</param>   
+    <message>手机号长度为${minLength}位</message>  
+  </validator>
+</validators>
+<!-- 字段校验 
+<validators>
+  <field name="users.userName">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>用户名不能为空</message>
+    </field-validator>
+    <field-validator type="stringlength">   
+      <param name="minLength">5</param>  
+      <param name="maxLength">12</param>   
+      <message>用户名长度应在${minLength}到${maxLength}个字符间</message>   
+    </field-validator>
+  </field>
+  
+  <field name="users.userPass">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>密码不能为空</message>
+    </field-validator>
+    <field-validator type="stringlength">   
+      <param name="minLength">5</param>  
+      <param name="maxLength">12</param>   
+      <message>密码长度应在${minLength}到${maxLength}个字符间</message>   
+    </field-validator>
+  </field>
+    
+  <field name="users.rePass">
+    <field-validator type="fieldexpression">
+      <param name="expression">users.rePass == users.userPass</param> 
+      <message>两次密码输入不一致</message>  
+    </field-validator>
+  </field>
+  
+  <field name="users.userPhone">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>手机号不能为空</message>
+    </field-validator>
+    <field-validator type="stringlength">   
+      <param name="minLength">11</param>  
+      <param name="maxLength">11</param>   
+      <message>手机号长度为${minLength}位</message>   
+    </field-validator>
+  </field>
+</validators>
+ -->

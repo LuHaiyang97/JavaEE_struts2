@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="toLogin" method="toLogin" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/Login.jsp</result>
+        </action>
+        <action name="index" method="toIndex" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/index.jsp</result>
+        </action>
+        
+        <action name="SelectUser" method="selectAllUser" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/UserSelect.jsp</result>
+        </action>
+        <action name="selUserByCondition" method="selUserByCondition" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/UserSelect.jsp</result>
+        </action>
+        <action name="Login" method="login" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/index.jsp</result>
+            <result name="gg">/WEB-INF/JSP/Login.jsp</result>
+        </action>
+        <action name="logout" method="logout" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/Login.jsp</result>
+        </action>
+        
+        <action name="Delete" method="delete" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/UserSelect.jsp</result>
+            <result name="error">/WEB-INF/JSP/Error.jsp</result>
+        </action>
+        
+        <action name="toRegiste" method="toRegiste" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/Registe.jsp</result>
+        </action>
+        <action name="Registe" method="registe" class="com.action.UserAction">
+            <result name="success">/WEB-INF/JSP/UserSelect.jsp</result>
+            <result name="input">/WEB-INF/JSP/Registe.jsp</result>
+        </action>
+        
+        <action name="toUpdate" class="com.action.UserAction" method="toUpdate">
+            <result name="success">/WEB-INF/JSP/Update.jsp</result>
+        </action>
+        <action name="update" class="com.action.UserAction" method="update">
+            <result name="success">/WEB-INF/JSP/UserSelect.jsp</result>
+            <result name="input">/WEB-INF/JSP/Update.jsp</result>
+        </action>
+        
+    </package>
+</struts>
